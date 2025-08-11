@@ -11,17 +11,10 @@ public class Paciente : Perfil
     public float Latitud => latitud;
     public float Longitud => longitud;
 
-    public Paciente(uint id, string nombre, string correo, int celular, string tipo_cedula, int cedula, string contrasena, HistoriaClinica historia_clinica)
+    public Paciente(uint id, string nombre, string correo, int celular, string tipo_cedula, int cedula, string contrasena, HistoriaClinica historia_clinica, float latitud, float longitud)
         : base(id, nombre, correo, celular, tipo_cedula, cedula, contrasena)
     {
         this.historia_clinica = historia_clinica;
-        this.latitud = 0.0f;
-        this.longitud = 0.0f;
-    }
-
-    // Permite asignar la localización después de crear el objeto
-    public void AsignarLocalizacion(float latitud, float longitud)
-    {
         this.latitud = latitud;
         this.longitud = longitud;
     }
