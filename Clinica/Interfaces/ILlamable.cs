@@ -1,4 +1,4 @@
 public interface ILlamable
 {
-    void Llamar(int telefono);
+    string Llamar(int telefono);
 }

@@ -19,5 +19,5 @@ public abstract class Perfil : ILlamable
         this.contrasena = contrasena;
     }
 
-    public abstract void Llamar(int telefono);
+    public abstract string Llamar(int telefono);
 }

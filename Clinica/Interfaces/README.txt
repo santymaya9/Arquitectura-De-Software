@@ -1,1 +1,0 @@
-// Aquí puedes agregar tus interfaces personalizadas para el sistema.

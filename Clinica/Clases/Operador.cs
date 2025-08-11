@@ -31,9 +31,9 @@ public class Operador : Perfil, IGestionRecursos
         // Implementación de ejemplo
     }
 
-    public override void Llamar(int telefono)
+    public override string Llamar(int telefono)
     {
-        // Implementación de ejemplo
+        return $"Operador llamado al teléfono {telefono}";
     }
 
     public void Trazar_ruta(AlertaEmergencia alerta, List<CentroMedico> centros_medicos)

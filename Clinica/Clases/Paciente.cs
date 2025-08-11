@@ -19,27 +19,8 @@ public class Paciente : Perfil
         this.longitud = longitud;
     }
 
-    public (float latitud, float longitud) Geolocalizar()
+    public override string Llamar(int telefono)
     {
-        return (latitud, longitud);
-    }
-
-    public AlertaEmergencia Crear_Alerta((float latitud, float longitud) geolocalizar, Paciente paciente)
-    {
-        return new AlertaEmergencia(
-            "pendiente",
-            paciente,
-            geolocalizar.latitud,
-            geolocalizar.longitud,
-            DateTime.Now,
-            DateTime.Now,
-            null,
-            null
-        );
-    }
-
-    public override void Llamar(int telefono)
-    {
-        // Implementación específica de Paciente
+        return $"Paciente llamado al teléfono {telefono}";
     }
 }

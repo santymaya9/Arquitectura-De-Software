@@ -21,9 +21,9 @@ public class Paramedico : Perfil, IGestionRecursos
         this.registroAtenciones = registroAtenciones ?? new List<RegistroAtencion>();
     }
 
-    public override void Llamar(int telefono)
+    public override string Llamar(int telefono)
     {
-        // Implementación específica de Paramedico
+        return $"Paramedico llamado al teléfono {telefono}";
     }
 
     public void Trazar_ruta(AlertaEmergencia alerta, List<CentroMedico> centros_medicos)
