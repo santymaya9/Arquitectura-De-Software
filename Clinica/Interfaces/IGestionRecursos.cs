@@ -1,4 +1,4 @@
-public interface Igestion_recursos
+public interface IGestionRecursos
 {
     void Llamar(int telefono);
     void Trazar_ruta(AlertaEmergencia alerta, List<CentroMedico> centros_medicos);

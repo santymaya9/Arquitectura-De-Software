@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-public class Operador : Perfil
+public class Operador : Perfil, IGestionRecursos
 {
     private int numOperador;
     private List<AlertaEmergencia> alertasEmergencia;
@@ -31,23 +31,23 @@ public class Operador : Perfil
         // Implementación de ejemplo
     }
 
-    public override string Asignar_triaje(Paciente paciente, string nivel_triaje)
+    public override void Llamar(int telefono)
+    {
+        // Implementación de ejemplo
+    }
+
+    public void Trazar_ruta(AlertaEmergencia alerta, List<CentroMedico> centros_medicos)
+    {
+        // Implementación de ejemplo
+    }
+
+    public string Asignar_triaje(Paciente paciente, string nivel_triaje)
     {
         // Implementación de ejemplo
         return "";
     }
 
-    public override void Trazar_ruta(AlertaEmergencia alerta, List<CentroMedico> centros_medicos)
-    {
-        // Implementación de ejemplo
-    }
-
-    public override void Mostrar_alerta(AlertaEmergencia alerta_emergencia)
-    {
-        // Implementación de ejemplo
-    }
-
-    public override void Llamar(int telefono)
+    public void Mostrar_alerta(AlertaEmergencia alerta_emergencia)
     {
         // Implementación de ejemplo
     }

@@ -1,4 +1,4 @@
-public abstract class Perfil : Igestion_recursos
+public abstract class Perfil : ILlamable
 {
     protected uint id;
     protected string nombre;
@@ -20,7 +20,4 @@ public abstract class Perfil : Igestion_recursos
     }
 
     public abstract void Llamar(int telefono);
-    public abstract void Trazar_ruta(AlertaEmergencia alerta, List<CentroMedico> centros_medicos);
-    public abstract string Asignar_triaje(Paciente paciente, string nivel_triaje);
-    public abstract void Mostrar_alerta(AlertaEmergencia alerta_emergencia);
 }

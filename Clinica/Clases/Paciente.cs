@@ -24,38 +24,7 @@ public class Paciente : Perfil
         return (latitud, longitud);
     }
 
-    // Crea una alerta de emergencia usando la geolocalización y el paciente recibidos como parámetros
-    public AlertaEmergencia Crear_Alerta((float latitud, float longitud) geolocalizar, Paciente paciente)
-    {
-        return new AlertaEmergencia(
-            "pendiente",
-            paciente,
-            geolocalizar.latitud,
-            geolocalizar.longitud,
-            DateTime.Now,
-            DateTime.Now,
-            null,
-            null
-        );
-    }
-
     public override void Llamar(int telefono)
-    {
-        // Implementación específica de Paciente
-    }
-
-    public override void Trazar_ruta(AlertaEmergencia alerta, List<CentroMedico> centros_medicos)
-    {
-        // Implementación específica de Paciente
-    }
-
-    public override string Asignar_triaje(Paciente paciente, string nivel_triaje)
-    {
-        // Implementación específica de Paciente
-        return "";
-    }
-
-    public override void Mostrar_alerta(AlertaEmergencia alerta_emergencia)
     {
         // Implementación específica de Paciente
     }

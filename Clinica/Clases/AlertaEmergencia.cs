@@ -17,7 +17,7 @@ public class AlertaEmergencia
     public DateTime FechaFinalizacion => fecha_finalizacion == default ? DateTime.MinValue : fecha_finalizacion;
     public Ruta Rutas => rutas ?? null;
     public Paramedico ParamedicoAsignado => paramedicoAsignado ?? null;
-
+  
     public AlertaEmergencia(string estado, Paciente paciente, float latitud, float longitud, DateTime fecha, DateTime fecha_finalizacion, Ruta rutas, Paramedico paramedicoAsignado)
     {
         this.estado = estado;

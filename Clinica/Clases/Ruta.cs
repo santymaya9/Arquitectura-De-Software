@@ -6,7 +6,7 @@ public class Ruta
 
     public float Latitud => latitud;
     public float Longitud => longitud;
-    public int NumNodo => num_nodo;
+    public int NumNodo => num_nodo == default ? -1 : num_nodo;
 
     public Ruta(float latitud, float longitud, int num_nodo)
     {
