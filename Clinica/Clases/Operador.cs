@@ -3,13 +3,27 @@ using System.Collections.Generic;
 public class Operador : Perfil
 {
     private int numOperador;
-    private AlertaEmergencia[] alertasEmergencia;
+    private List<AlertaEmergencia> alertasEmergencia;
 
-    public Operador(uint id, string nombre, string correo, int celular, string tipo_cedula, int cedula, string contrasena, int numOperador, AlertaEmergencia[] alertasEmergencia)
+    public int NumOperador => numOperador;
+    public List<AlertaEmergencia> AlertasEmergencia => alertasEmergencia ?? new List<AlertaEmergencia>();
+
+    public Operador(uint id, string nombre, string correo, int celular, string tipo_cedula, int cedula, string contrasena, int numOperador, List<AlertaEmergencia> alertasEmergencia = null)
         : base(id, nombre, correo, celular, tipo_cedula, cedula, contrasena)
     {
         this.numOperador = numOperador;
-        this.alertasEmergencia = alertasEmergencia;
+        this.alertasEmergencia = alertasEmergencia ?? new List<AlertaEmergencia>();
+    }
+
+    public void AgregarAlerta(AlertaEmergencia alerta)
+    {
+        if (alerta != null)
+            alertasEmergencia.Add(alerta);
+    }
+
+    public List<AlertaEmergencia> ObtenerAlertas()
+    {
+        return new List<AlertaEmergencia>(alertasEmergencia);
     }
 
     public void Asignar_paramedico(Paramedico paramedico)

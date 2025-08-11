@@ -10,7 +10,7 @@ public class CentroMedico
     public float Latitud => latitud;
     public float Longitud => longitud;
     public string Complejidad => string.IsNullOrWhiteSpace(complejidad) ? "Sin complejidad" : complejidad;
-    public int Telefono => telefono;
+    public int Telefono => telefono == default ? -1 : telefono;
 
     public CentroMedico(string nombre, float latitud, float longitud, string complejidad, int telefono)
     {

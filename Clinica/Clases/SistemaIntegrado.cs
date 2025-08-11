@@ -9,15 +9,15 @@ public class SistemaIntegrado : ICreacion
     private List<CentroMedico> centroMedico;
 
     public string Nombre => string.IsNullOrWhiteSpace(nombre) ? "Sin nombre" : nombre;
-    public int Telefono => telefono;
+    public int Telefono => telefono == default ? -1 : telefono;
     public List<Cuenta> Cuentas => cuentas ?? new List<Cuenta>();
     public List<CentroMedico> CentroMedico => centroMedico ?? new List<CentroMedico>();
 
-    public SistemaIntegrado(string nombre, List<Cuenta> cuentas, List<CentroMedico> centroMedico)
+    public SistemaIntegrado(string nombre, List<Cuenta> cuentas = null, List<CentroMedico> centroMedico = null)
     {
         this.nombre = nombre;
-        this.cuentas = cuentas;
-        this.centroMedico = centroMedico;
+        this.cuentas = cuentas ?? new List<Cuenta>();
+        this.centroMedico = centroMedico ?? new List<CentroMedico>();
     }
 
     public string Iniciar_sesion(Cuenta cuenta)

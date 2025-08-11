@@ -1,35 +1,46 @@
 using System.Collections.Generic;
+using System;
 
 public class Paciente : Perfil
 {
-    private HistoriaClinica historiaClinica;
-    private List<HistoriaClinica> historiasClinicas;
+    private HistoriaClinica historia_clinica;
+    private float latitud;
+    private float longitud;
 
-    public List<HistoriaClinica> HistoriasClinicas => historiasClinicas ?? new List<HistoriaClinica>();
+    public HistoriaClinica HistoriaClinica => historia_clinica ?? null;
+    public float Latitud => latitud;
+    public float Longitud => longitud;
 
-    public Paciente(uint id, string nombre, string correo, int celular, string tipo_cedula, int cedula, string contrasena, HistoriaClinica historiaClinica)
+    public Paciente(uint id, string nombre, string correo, int celular, string tipo_cedula, int cedula, string contrasena, HistoriaClinica historia_clinica)
         : base(id, nombre, correo, celular, tipo_cedula, cedula, contrasena)
     {
-        this.historiaClinica = historiaClinica;
-        historiasClinicas = new List<HistoriaClinica>();
+        this.historia_clinica = historia_clinica;
+        this.latitud = 0.0f;
+        this.longitud = 0.0f;
+    }
+
+    // Permite asignar la localización después de crear el objeto
+    public void AsignarLocalizacion(float latitud, float longitud)
+    {
+        this.latitud = latitud;
+        this.longitud = longitud;
     }
 
     public (float latitud, float longitud) Geolocalizar()
     {
-        // Implementación de ejemplo
-        return (0.0f, 0.0f);
+        return (latitud, longitud);
     }
 
+    // Crea una alerta de emergencia usando la geolocalización y el paciente recibidos como parámetros
     public AlertaEmergencia Crear_Alerta((float latitud, float longitud) geolocalizar, Paciente paciente)
     {
-        // Implementación de ejemplo
         return new AlertaEmergencia(
             "pendiente",
             paciente,
             geolocalizar.latitud,
             geolocalizar.longitud,
-            System.DateTime.Now,
-            System.DateTime.Now,
+            DateTime.Now,
+            DateTime.Now,
             null,
             null
         );
@@ -55,8 +66,4 @@ public class Paciente : Perfil
     {
         // Implementación específica de Paciente
     }
-
-    public void PadecerAmbulancia(AmbulanciaEmergencia ambulancia) { }
-    public void CrearAmbulanciaEmergencia(AmbulanciaEmergencia ambulancia) { }
-    public void LlamarAmbulancia() { }
 }

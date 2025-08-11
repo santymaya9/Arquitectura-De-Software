@@ -8,10 +8,10 @@ public class Controlador
     public List<Cuenta> Cuentas => cuentas ?? new List<Cuenta>();
     public List<CentroMedico> CentrosMedicos => centrosMedicos ?? new List<CentroMedico>();
 
-    public Controlador()
+    public Controlador(List<Cuenta> cuentas = null, List<CentroMedico> centrosMedicos = null)
     {
-        cuentas = new List<Cuenta>();
-        centrosMedicos = new List<CentroMedico>();
+        this.cuentas = cuentas ?? new List<Cuenta>();
+        this.centrosMedicos = centrosMedicos ?? new List<CentroMedico>();
     }
 
     public void AgregarCentroMedico(string nombre, string correo, string celular, int tipoCelular, int tipoPerfil) { }
