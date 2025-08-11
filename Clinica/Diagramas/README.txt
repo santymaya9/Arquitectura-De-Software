@@ -1,0 +1,1 @@
+// Aquí puedes agregar tus diagramas, imágenes o archivos relacionados con el diseño del sistema.
