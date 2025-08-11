@@ -24,6 +24,20 @@ public class Paciente : Perfil
         return (latitud, longitud);
     }
 
+    public AlertaEmergencia Crear_Alerta((float latitud, float longitud) geolocalizar, Paciente paciente)
+    {
+        return new AlertaEmergencia(
+            "pendiente",
+            paciente,
+            geolocalizar.latitud,
+            geolocalizar.longitud,
+            DateTime.Now,
+            DateTime.Now,
+            null,
+            null
+        );
+    }
+
     public override void Llamar(int telefono)
     {
         // Implementación específica de Paciente
