@@ -1,54 +1,17 @@
 using System.Collections.Generic;
 
-public class Operador : Perfil, IGestionRecursos
+public class Operador : Perfil
 {
-    private int numOperador;
-    private List<AlertaEmergencia> alertasEmergencia;
+    private int num_operador;
+    private List<AlertaEmergencia> l_alertasEmergencia;
 
-    public int NumOperador => numOperador;
-    public List<AlertaEmergencia> AlertasEmergencia => alertasEmergencia ?? new List<AlertaEmergencia>();
+    public int NumOperador => num_operador;
+    public List<AlertaEmergencia> AlertasEmergencia => l_alertasEmergencia;
 
-    public Operador(uint id, string nombre, string correo, int celular, string tipo_cedula, int cedula, string contrasena, int numOperador, List<AlertaEmergencia> alertasEmergencia = null)
+    public Operador(uint id, string nombre, string correo, int celular, string tipo_cedula, int cedula, string contrasena, int num_operador, List<AlertaEmergencia> l_alertasEmergencia)
         : base(id, nombre, correo, celular, tipo_cedula, cedula, contrasena)
     {
-        this.numOperador = numOperador;
-        this.alertasEmergencia = alertasEmergencia ?? new List<AlertaEmergencia>();
-    }
-
-    public void AgregarAlerta(AlertaEmergencia alerta)
-    {
-        if (alerta != null)
-            alertasEmergencia.Add(alerta);
-    }
-
-    public List<AlertaEmergencia> ObtenerAlertas()
-    {
-        return new List<AlertaEmergencia>(alertasEmergencia);
-    }
-
-    public void Asignar_paramedico(Paramedico paramedico)
-    {
-        // Implementación de ejemplo
-    }
-
-    public override string Llamar(int telefono)
-    {
-        return $"Operador llamado al teléfono {telefono}";
-    }
-
-    public void Trazar_ruta(AlertaEmergencia alerta, List<CentroMedico> centros_medicos)
-    {
-        // Implementación de ejemplo
-    }
-
-    public string Asignar_triaje(Paciente paciente, string nivel_triaje)
-    {
-        // Implementación de ejemplo
-        return "";
-    }
-
-    public void Mostrar_alerta(AlertaEmergencia alerta_emergencia)
-    {
-        // Implementación de ejemplo
+        this.num_operador = num_operador;
+        this.l_alertasEmergencia = l_alertasEmergencia ?? new List<AlertaEmergencia>();
     }
 }

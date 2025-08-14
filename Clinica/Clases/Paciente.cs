@@ -19,8 +19,5 @@ public class Paciente : Perfil
         this.longitud = longitud;
     }
 
-    public override string Llamar(int telefono)
-    {
-        return $"Paciente llamado al teléfono {telefono}";
-    }
+   
 }

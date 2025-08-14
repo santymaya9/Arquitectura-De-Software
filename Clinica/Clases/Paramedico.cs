@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-public class Paramedico : Perfil, IGestionRecursos
+public class Paramedico : Perfil
 {
     private int numParamedico;
     private List<AlertaEmergencia> alertasAsignadas;
@@ -21,27 +21,5 @@ public class Paramedico : Perfil, IGestionRecursos
         this.registroAtenciones = registroAtenciones ?? new List<RegistroAtencion>();
     }
 
-    public override string Llamar(int telefono)
-    {
-        return $"Paramedico llamado al teléfono {telefono}";
-    }
 
-    public void Trazar_ruta(AlertaEmergencia alerta, List<CentroMedico> centros_medicos)
-    {
-        // Implementación específica de Paramedico
-    }
-
-    public string Asignar_triaje(Paciente paciente, string nivel_triaje)
-    {
-        // Implementación específica de Paramedico
-        return "";
-    }
-
-    public void Mostrar_alerta(AlertaEmergencia alerta_emergencia)
-    {
-        // Implementación específica de Paramedico
-    }
-
-    public void Actualizar_estado_alerta(AlertaEmergencia alerta, string estado) { }
-    public void Mostrar_registro(RegistroAtencion registro_atencion) { }
 }
