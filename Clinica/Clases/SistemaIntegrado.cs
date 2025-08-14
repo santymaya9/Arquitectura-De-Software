@@ -8,7 +8,7 @@ public class SistemaIntegrado
     private List<Cuenta> l_cuentas;
     private List<CentroMedico> l_centroMedico;
 
-    public string Nombre => nombre;
+    public string Nombre => string.IsNullOrWhiteSpace(nombre) ? "Sin nombre" : nombre;
     public int Telefono => telefono;
     public List<Cuenta> Cuentas => l_cuentas;
     public List<CentroMedico> CentroMedico => l_centroMedico;

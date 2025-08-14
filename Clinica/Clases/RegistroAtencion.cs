@@ -9,8 +9,8 @@ public class RegistroAtencion
     private DateTime fecha;
 
     public AlertaEmergencia Alerta => alerta ?? null;
-    public int Pulso => pulso == default ? -1 : pulso;
-    public int NivelConciencia => nivel_conciencia == default ? -1 : nivel_conciencia;
+    public int Pulso => pulso;
+    public int NivelConciencia => nivel_conciencia;
     public string Observaciones => string.IsNullOrWhiteSpace(observaciones) ? "Sin observaciones" : observaciones;
     public DateTime Fecha => fecha == default ? DateTime.MinValue : fecha;
 

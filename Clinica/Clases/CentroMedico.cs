@@ -7,9 +7,9 @@ public class CentroMedico
     private int telefono;
 
     public float Latitud => latitud;
-    public string Nombre => nombre;
+    public string Nombre => string.IsNullOrWhiteSpace(nombre) ? "Sin nombre" : nombre;
     public float Longitud => longitud;
-    public string Complejidad => complejidad;
+    public string Complejidad => string.IsNullOrWhiteSpace(complejidad) ? "Sin complejidad" : complejidad;
     public int Telefono => telefono;
 
     public CentroMedico(string nombre, float latitud, float longitud, string complejidad, int telefono)
