@@ -8,11 +8,31 @@ public class RegistroAtencion
     private string observaciones;
     private DateTime fecha;
 
-    public AlertaEmergencia Alerta => alerta ?? null;
-    public int Pulso => pulso;
-    public int NivelConciencia => nivel_conciencia;
-    public string Observaciones => string.IsNullOrWhiteSpace(observaciones) ? "Sin observaciones" : observaciones;
-    public DateTime Fecha => fecha == default ? DateTime.MinValue : fecha;
+    public AlertaEmergencia Alerta
+    {
+        get => alerta;
+        set => alerta = value;
+    }
+    public int Pulso
+    {
+        get => pulso;
+        set => pulso = value;
+    }
+    public int NivelConciencia
+    {
+        get => nivel_conciencia;
+        set => nivel_conciencia = value;
+    }
+    public string Observaciones
+    {
+        get => string.IsNullOrWhiteSpace(observaciones) ? "Sin observaciones" : observaciones;
+        set => observaciones = value;
+    }
+    public DateTime Fecha
+    {
+        get => fecha == default ? DateTime.MinValue : fecha;
+        set => fecha = value;
+    }
 
     public RegistroAtencion(AlertaEmergencia alerta, int pulso, int nivel_conciencia, string observaciones, DateTime fecha)
     {

@@ -7,9 +7,21 @@ public class Cuenta
     private DateTime fecha_creacion;
     private string rol;
 
-    public string Perfil => string.IsNullOrWhiteSpace(perfil) ? "Sin perfil" : perfil;
-    public DateTime FechaCreacion => fecha_creacion == default ? DateTime.MinValue : fecha_creacion;
-    public string Rol => string.IsNullOrWhiteSpace(rol) ? "Sin rol" : rol;
+    public string Perfil
+    {
+        get => string.IsNullOrWhiteSpace(perfil) ? "Sin perfil" : perfil;
+        set => perfil = value;
+    }
+    public DateTime FechaCreacion
+    {
+        get => fecha_creacion == default ? DateTime.MinValue : fecha_creacion;
+        set => fecha_creacion = value;
+    }
+    public string Rol
+    {
+        get => string.IsNullOrWhiteSpace(rol) ? "Sin rol" : rol;
+        set => rol = value;
+    }
 
     public Cuenta(string perfil, DateTime fecha_creacion, string rol)
     {

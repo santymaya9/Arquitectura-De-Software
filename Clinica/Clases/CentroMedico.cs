@@ -6,11 +6,31 @@ public class CentroMedico
     private string complejidad;
     private int telefono;
 
-    public float Latitud => latitud;
-    public string Nombre => string.IsNullOrWhiteSpace(nombre) ? "Sin nombre" : nombre;
-    public float Longitud => longitud;
-    public string Complejidad => string.IsNullOrWhiteSpace(complejidad) ? "Sin complejidad" : complejidad;
-    public int Telefono => telefono;
+    public float Latitud
+    {
+        get => latitud;
+        set => latitud = value;
+    }
+    public string Nombre
+    {
+        get => string.IsNullOrWhiteSpace(nombre) ? "Sin nombre" : nombre;
+        set => nombre = value;
+    }
+    public float Longitud
+    {
+        get => longitud;
+        set => longitud = value;
+    }
+    public string Complejidad
+    {
+        get => string.IsNullOrWhiteSpace(complejidad) ? "Sin complejidad" : complejidad;
+        set => complejidad = value;
+    }
+    public int Telefono
+    {
+        get => telefono;
+        set => telefono = value;
+    }
 
     public CentroMedico(string nombre, float latitud, float longitud, string complejidad, int telefono)
     {

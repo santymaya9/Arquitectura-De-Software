@@ -9,15 +9,47 @@ public class AlertaEmergencia
     private Ruta rutas;
     private Paramedico paramedicoAsignado;
 
-    public string Estado => string.IsNullOrWhiteSpace(estado) ? "Sin estado" : estado;
-    public Paciente Paciente => paciente ?? null;
-    public float Latitud => latitud;
-    public float Longitud => longitud;
-    public DateTime Fecha => fecha == default ? DateTime.MinValue : fecha;
-    public DateTime FechaFinalizacion => fecha_finalizacion == default ? DateTime.MinValue : fecha_finalizacion;
-    public Ruta Rutas => rutas ?? null;
-    public Paramedico ParamedicoAsignado => paramedicoAsignado ?? null;
-  
+    public string Estado
+    {
+        get => string.IsNullOrWhiteSpace(estado) ? "Sin estado" : estado;
+        set => estado = value;
+    }
+    public Paciente Paciente
+    {
+        get => paciente;
+        set => paciente = value;
+    }
+    public float Latitud
+    {
+        get => latitud;
+        set => latitud = value;
+    }
+    public float Longitud
+    {
+        get => longitud;
+        set => longitud = value;
+    }
+    public DateTime Fecha
+    {
+        get => fecha == default ? DateTime.MinValue : fecha;
+        set => fecha = value;
+    }
+    public DateTime FechaFinalizacion
+    {
+        get => fecha_finalizacion == default ? DateTime.MinValue : fecha_finalizacion;
+        set => fecha_finalizacion = value;
+    }
+    public Ruta Rutas
+    {
+        get => rutas;
+        set => rutas = value;
+    }
+    public Paramedico ParamedicoAsignado
+    {
+        get => paramedicoAsignado;
+        set => paramedicoAsignado = value;
+    }
+
     public AlertaEmergencia(string estado, Paciente paciente, float latitud, float longitud, DateTime fecha, DateTime fecha_finalizacion, Ruta rutas, Paramedico paramedicoAsignado)
     {
         this.estado = estado;

@@ -7,9 +7,21 @@ public class Paciente : Perfil
     private float latitud;
     private float longitud;
 
-    public HistoriaClinica HistoriaClinica => historia_clinica ?? null;
-    public float Latitud => latitud;
-    public float Longitud => longitud;
+    public HistoriaClinica HistoriaClinica
+    {
+        get => historia_clinica;
+        set => historia_clinica = value;
+    }
+    public float Latitud
+    {
+        get => latitud;
+        set => latitud = value;
+    }
+    public float Longitud
+    {
+        get => longitud;
+        set => longitud = value;
+    }
 
     public Paciente(uint id, string nombre, string correo, int celular, string tipo_cedula, int cedula, string contrasena, HistoriaClinica historia_clinica, float latitud, float longitud)
         : base(id, nombre, correo, celular, tipo_cedula, cedula, contrasena)
@@ -18,6 +30,4 @@ public class Paciente : Perfil
         this.latitud = latitud;
         this.longitud = longitud;
     }
-
-   
 }

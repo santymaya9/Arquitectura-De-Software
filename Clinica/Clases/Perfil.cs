@@ -8,13 +8,41 @@ public abstract class Perfil
     private int cedula;
     private string contrasena;
 
-    public uint Id => id;
-    public string Nombre => string.IsNullOrWhiteSpace(nombre) ? "Sin nombre" : nombre;
-    public string Correo => string.IsNullOrWhiteSpace(correo) ? "Sin correo" : correo;
-    public int Celular => celular;
-    public string TipoCedula => tipo_cedula;
-    public int Cedula => cedula;
-    public string Contrasena => string.IsNullOrWhiteSpace(contrasena) ? "Sin contraseña" : contrasena;
+    public uint Id
+    {
+        get => id;
+        set => id = value;
+    }
+    public string Nombre
+    {
+        get => string.IsNullOrWhiteSpace(nombre) ? "Sin nombre" : nombre;
+        set => nombre = value;
+    }
+    public string Correo
+    {
+        get => string.IsNullOrWhiteSpace(correo) ? "Sin correo" : correo;
+        set => correo = value;
+    }
+    public int Celular
+    {
+        get => celular;
+        set => celular = value;
+    }
+    public string TipoCedula
+    {
+        get => tipo_cedula;
+        set => tipo_cedula = value;
+    }
+    public int Cedula
+    {
+        get => cedula;
+        set => cedula = value;
+    }
+    public string Contrasena
+    {
+        get => string.IsNullOrWhiteSpace(contrasena) ? "Sin contraseña" : contrasena;
+        set => contrasena = value;
+    }
 
     public Perfil(uint id, string nombre, string correo, int celular, string tipo_cedula, int cedula, string contrasena)
     {

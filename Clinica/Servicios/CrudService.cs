@@ -2,23 +2,15 @@ using System;
 
 public class CrudService : ICrud
 {
-    private readonly IRegistroSesion _registroSesion;
-
-    public IRegistroSesion RegistroSesion => _registroSesion;
-
-    public CrudService(IRegistroSesion registroSesion)
+    public void Agregar(uint id, string nombre, string correo, int celular, string tipo_cedula, int cedula, string contrasena, IRegistrar tipo_registro)
     {
-        _registroSesion = registroSesion;
-    }
-
-    public void Agregar(uint id, string nombre, string correo, int celular, string tipo_cedula, int cedula, string contrasena, string tipo_perfil)
-    {
-        // Lógica para agregar una cuenta
-    }
-
-    public string Eliminar(Cuenta cuenta, Cuenta iniciada)
-    {
-        // Lógica para eliminar una cuenta
-        return "";
+        var cuenta = new Cuenta(nombre, DateTime.Now, "");
+        cuenta.Correo = correo;
+        cuenta.Celular = celular;
+        cuenta.TipoCedula = tipo_cedula;
+        cuenta.Cedula = cedula;
+        cuenta.Contrasena = contrasena;
+        cuenta.Id = id;
+        tipo_registro.Registrar(cuenta);
     }
 }
