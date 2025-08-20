@@ -1,11 +1,15 @@
 using System;
 
-public class RolParamedico : IRegistroSesion
+public class RolParamedico : IRegistroSesion, IRegistrar
 {
     public void RegistrarSesion(Cuenta cuenta)
     {
         cuenta.Rol = "Paramedico";
         cuenta.FechaCreacion = DateTime.Now;
-        // Lógica específica para paramédico si es necesario
+    }
+
+    public void Registrar(Cuenta cuenta)
+    {
+        RegistrarSesion(cuenta);
     }
 }

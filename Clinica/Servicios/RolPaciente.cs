@@ -1,11 +1,15 @@
 using System;
 
-public class RolPaciente : IRegistroSesion
+public class RolPaciente : IRegistroSesion, IRegistrar
 {
     public void RegistrarSesion(Cuenta cuenta)
     {
         cuenta.Rol = "Paciente";
         cuenta.FechaCreacion = DateTime.Now;
-        // Lógica específica para paciente si es necesario
+    }
+
+    public void Registrar(Cuenta cuenta)
+    {
+        RegistrarSesion(cuenta);
     }
 }
