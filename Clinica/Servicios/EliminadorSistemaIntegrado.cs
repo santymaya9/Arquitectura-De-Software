@@ -9,13 +9,13 @@ public class EliminadorSistemaIntegrado
         this.eliminarCentroMedico = eliminarCentroMedico;
     }
 
-    public void Eliminar_Cuenta(Cuenta cuenta, SistemaIntegrado sistema)
+    public void Eliminar_Cuenta(Cuenta cuenta, List<Cuenta> listaCuentas)
     {
-        eliminarCuenta.Eliminar_cuenta(cuenta, sistema);
+        eliminarCuenta.Eliminar_cuenta(cuenta, listaCuentas);
     }
 
-    public void Eliminar_CentroMedico(CentroMedico centroMedico, SistemaIntegrado sistema)
+    public void Eliminar_CentroMedico(CentroMedico centroMedico, List<CentroMedico> listaCentros)
     {
-        eliminarCentroMedico.Eliminar_CentroMedico(centroMedico, sistema);
+        eliminarCentroMedico.Eliminar_CentroMedico(centroMedico, listaCentros);
     }
 }

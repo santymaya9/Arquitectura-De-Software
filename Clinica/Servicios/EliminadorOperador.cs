@@ -1,14 +1,12 @@
-public class EliminadorOperador
+public class EliminadorOperador : IEliminar_alerta
 {
-    private IEliminar_alerta eliminarAlerta;
-
-    public EliminadorOperador(IEliminar_alerta eliminarAlerta)
+    private readonly Operador _operador;
+    public EliminadorOperador(Operador operador)
     {
-        this.eliminarAlerta = eliminarAlerta;
+        _operador = operador;
     }
-
-    public void Eliminar_alerta(AlertaEmergencia alerta)
+    public void Eliminar_alerta(AlertaEmergencia alerta, List<AlertaEmergencia> listaAlertas)
     {
-        eliminarAlerta.Eliminar_alerta(alerta);
+        _operador?.AlertasEmergencia?.Remove(alerta);
     }
 }

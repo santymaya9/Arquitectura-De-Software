@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-public class NavegadorParamedico : IEnrutamiento
+public class NavegadorOperador : IEnrutamiento
 {
     public void Crear_ruta(AlertaEmergencia alerta, List<CentroMedico> l_centros_medicos)
     {

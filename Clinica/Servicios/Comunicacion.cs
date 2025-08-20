@@ -1,4 +1,4 @@
-public class LlamarService : ILlamable
+public class Comunicacion : ILlamar
 {
     public string Llamar(int telefono)
     {
